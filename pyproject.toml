@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "riotgames-retrieve"
+version = "0.2.0"
+description = "Dump Riot match history and raw timelines into sqlite without getting 429'd"
+readme = "README.md"
+authors = [{ name = "Dave Koski" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.24.0",
+    "tqdm>=4.65.0",
+    "zstandard>=0.21.0",
+]
+
+[project.scripts]
+riotgames-retrieve = "riotgames_retrieve.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.3.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["riotgames_retrieve*"]
