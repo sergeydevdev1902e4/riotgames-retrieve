@@ -55,3 +55,5 @@ riotgames-retrieve stats --db kr_matches.db
 ## Rate limits
 
 The client tracks response headers (`X-App-Rate-Limit`, `X-Method-Rate-Limit`) and sleeps proactively when the bucket fills up. If Riot sends back a 429 anyway, it honors `Retry-After` with jitter.
+
+<!-- updated: 2026-09-08 -->
